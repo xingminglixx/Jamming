@@ -9,7 +9,7 @@ render() {
   <h2>Results</h2>
   <Tracklist tracks={this.props.searchResults} 
   
-  isRemoval={false}      
+  isRemoval={true}      
   onAdd={this.props.onAdd}/>
 </div>
 

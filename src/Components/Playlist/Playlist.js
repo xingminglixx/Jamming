@@ -8,7 +8,7 @@ render(){
 return(
 <div className="Playlist">
   <input value="New Playlist"/> 
-  <Tracklist  tracks={this.props.TrackList} />
+  <Tracklist  tracks={this.props.TrackList} onRemove={this.props.onRemove} isRemoval={false} />
   <button className="Playlist-save">SAVE TO SPOTIFY</button>
 </div>
 
