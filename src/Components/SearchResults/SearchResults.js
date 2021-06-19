@@ -7,7 +7,10 @@ render() {
     return (
         <div className="SearchResults">
   <h2>Results</h2>
-  <Tracklist tracks={this.props.searchResults}/>
+  <Tracklist tracks={this.props.searchResults} 
+  
+  isRemoval={false}      
+  onAdd={this.props.onAdd}/>
 </div>
 
 

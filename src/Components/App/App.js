@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResults: [{
-          name: null,
+          name: 'son',
           artist: null,
           album: null,
           id: null
@@ -25,9 +25,45 @@ class App extends React.Component {
           album: null,
           id: null
         }
+      ],
+      playlistName:'any',
+      playlistTracks:[
+        {name:null, artist:null,album:null,id:null},
+        {name:null, artist:null,album:null,id:null},
+        {name:null, artist:null,album:null,id:null}
+
+
       ]
+
+
+
+
     }
+
+    this.addTrack=this.addTrack.bind(this);
   }
+addTrack(track){
+  const newTrack=this.state.playlistTracks 
+if (newTrack.find(savedTrack=>savedTrack.id===track.id)){
+return  
+}
+newTrack.push(track)
+this.setState(
+
+  {playlistTracks:newTrack}
+)}
+
+removeTrack(track){
+const removedTrack= this.state.playlistTracks
+if (removedTrack.find(item=>{track.id===item.id})){
+
+
+  
+}
+
+
+
+}
 
 
 render(){
@@ -37,8 +73,8 @@ return(
   <div className="App">
   <SearchBar />
     <div className="App-playlist">
-   <SearchResults searchResults={this.state.searchResults} />
-    <Playlist/>
+   <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
+    <Playlist Playlist={this.state.playlistName} TrackList={this.state.playlistTracks}/>
     </div>
     </div>
   </div>
